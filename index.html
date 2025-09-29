@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOLDEN AURI - Official Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f8f5f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Golden decoration pattern */
+        .golden-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#d4af37 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        /* Header with logo */
+        .header {
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(to bottom, #fff, #f8f5f0);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #d4af37, #f9f295);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            margin-right: 10px;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+            position: relative;
+        }
+
+        .logo-icon::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #d4af37;
+            border-radius: 0 100% 0 100%;
+            transform: rotate(45deg);
+            top: -5px;
+            right: -5px;
+        }
+
+        .brand-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        /* Admin login button */
+        .admin-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            border: none;
+            color: #d4af37;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 10;
+        }
+
+        /* Main content */
+        .main-content {
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-text {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            margin: 30px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .cta-text::after {
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(to right, #d4af37, #f9f295);
+            bottom: -10px;
+            left: 10%;
+            border-radius: 3px;
+        }
+
+        /* Buttons */
+        .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 40px;
+            padding: 0 10px;
+        }
+
+        .btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 15px;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #d4af37, #f9f295);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover::before {
+            transform: scaleX(1);
+        }
+
+        .btn-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #d4af37;
+        }
+
+        .btn-text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .btn.social {
+            background-color: #f8f5f0;
+        }
+
+        .btn.facebook .btn-icon {
+            color: #4267B2;
+        }
+
+        .btn.instagram .btn-icon {
+            color: #E1306C;
+        }
+
+        .btn.whatsapp {
+            background-color: #e6f7ea;
+            border-color: #25D366;
+        }
+
+        .btn.whatsapp .btn-icon {
+            color: #25D366;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(to top, #f8f5f0, #fff);
+        }
+
+        /* WhatsApp floating button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #777;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(to right, #d4af37, #f9f295);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Product catalog styles */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-image {
+            height: 150px;
+            background-color: #f8f5f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 10px;
+        }
+
+        .product-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .product-price {
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .product-actions {
+            display: flex;
+            margin-top: 10px;
+            gap: 5px;
+        }
+
+        .product-btn {
+            flex: 1;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .order-btn {
+            background-color: #d4af37;
+            color: white;
+        }
+
+        .order-btn:hover {
+            background-color: #b8941f;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+
+        /* WhatsApp Order Form */
+        .whatsapp-order-form {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f5f0;
+            border-radius: 8px;
+        }
+
+        .whatsapp-order-form h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .whatsapp-order-btn {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .whatsapp-order-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Admin Panel Styles */
+        .admin-panel {
+            display: none;
+            background-color: #f8f5f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .admin-title {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .admin-logout {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .admin-logout:hover {
+            background-color: #c82333;
+        }
+
+        .admin-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .admin-section h2 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 20px;
+        }
+
+        .admin-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .admin-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #777;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .admin-tab.active {
+            color: #d4af37;
+            border-bottom-color: #d4af37;
+        }
+
+        .admin-tab-content {
+            display: none;
+        }
+
+        .admin-tab-content.active {
+            display: block;
+        }
+
+        .admin-products-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .admin-products-table th,
+        .admin-products-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .admin-products-table th {
+            background-color: #f8f5f0;
+            font-weight: 600;
+        }
+
+        .admin-action-btn {
+            padding: 5px 10px;
+            margin: 0 3px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .admin-edit-btn {
+            background-color: #17a2b8;
+            color: white;
+        }
+
+        .admin-edit-btn:hover {
+            background-color: #138496;
+        }
+
+        .admin-delete-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .admin-delete-btn:hover {
+            background-color: #c82333;
+        }
+
+        .admin-product-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .image-upload {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .image-upload input[type=file] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .image-upload-label {
+            display: block;
+            padding: 10px;
+            background-color: #f8f5f0;
+            border: 1px dashed #ddd;
+            border-radius: 5px;
+            text-align: center;
+            color: #777;
+        }
+
+        .image-preview {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .image-preview img {
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Login Form */
+        .login-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .login-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .login-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .login-btn {
+            background: linear-gradient(to right, #d4af37, #f9f295);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 2000;
+            transform: translateX(150%);
+            transition: transform 0.3s ease;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            background-color: #28a745;
+        }
+
+        .notification.error {
+            background-color: #dc3545;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .buttons-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-text {
+                font-size: 24px;
+            }
+            
+            .admin-products-table {
+                font-size: 12px;
+            }
+            
+            .admin-products-table th,
+            .admin-products-table td {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Website -->
+    <div id="main-website" class="container">
+        <div class="golden-pattern"></div>
+        
+        <header class="header">
+            <button class="admin-btn" id="admin-login-btn">
+                <i class="fas fa-user-cog"></i>
+            </button>
+            <div class="logo">
+                <div class="logo-icon">Ga</div>
+                <div>
+                    <div class="brand-name">GOLDEN AURI</div>
+                    <div class="tagline">Premium Quality Products</div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <h1 class="cta-text">Start Shopping Now!</h1>
+            
+            <div class="buttons-container">
+                <a href="#" class="btn" id="catalog-btn">
+                    <i class="fas fa-th-large btn-icon"></i>
+                    <span class="btn-text">Product Catalog</span>
+                </a>
+                
+                <a href="#" class="btn" id="order-btn">
+                    <i class="fas fa-file-alt btn-icon"></i>
+                    <span class="btn-text">Order Form</span>
+                </a>
+                
+                <a href="#" class="btn" id="contact-btn">
+                    <i class="fas fa-envelope btn-icon"></i>
+                    <span class="btn-text">Contact Us</span>
+                </a>
+                
+                <a href="#" class="btn whatsapp" id="whatsapp-btn">
+                    <i class="fab fa-whatsapp btn-icon"></i>
+                    <span class="btn-text">Order via WhatsApp</span>
+                </a>
+                
+                <a href="https://facebook.com" target="_blank" class="btn social facebook">
+                    <i class="fab fa-facebook btn-icon"></i>
+                    <span class="btn-text">Facebook</span>
+                </a>
+                
+                <a href="https://instagram.com" target="_blank" class="btn social instagram">
+                    <i class="fab fa-instagram btn-icon"></i>
+                    <span class="btn-text">Instagram</span>
+                </a>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>&copy; 2023 GOLDEN AURI. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- WhatsApp floating button -->
+    <a href="#" class="whatsapp-float" id="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Product Catalog Modal -->
+    <div id="catalog-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Product Catalog</h2>
+            <div class="product-grid" id="product-grid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Form Modal -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Order Form</h2>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="product">Product</label>
+                    <select id="product" name="product" required>
+                        <option value="">Select a product</option>
+                        <!-- Products will be dynamically loaded here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Shipping Address</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" name="notes" rows="2"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Order</button>
+            </form>
+            
+            <div class="whatsapp-order-form">
+                <h3>Atau pesan langsung via WhatsApp</h3>
+                <button type="button" class="whatsapp-order-btn" id="whatsapp-order-btn">
+                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="contact-name">Name</label>
+                    <input type="text" id="contact-name" name="contact-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email</label>
+                    <input type="email" id="contact-email" name="contact-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            
+            <div style="margin-top: 30px; text-align: center;">
+                <h3>Our Information</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Golden Avenue No. 123, Jakarta</p>
+                <p><i class="fas fa-phone"></i> +62 81907701514672</p>
+                <p><i class="fas fa-envelope"></i> info@goldenauri.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="admin-login-modal" class="modal">
+        <div class="login-form">
+            <span class="close-modal">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label for="admin-password">Password</label>
+                    <input type="password" id="admin-password" name="admin-password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <p style="margin-top: 15px; font-size: 12px; color: #777; text-align: center;">
+                Default password: <strong>admin123</strong>
+            </p>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel" class="admin-panel">
+        <div class="admin-header">
+            <h1 class="admin-title">GOLDEN AURI Admin Panel</h1>
+            <button class="admin-logout" id="admin-logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+        
+        <div class="admin-section">
+            <div class="admin-tabs">
+                <div class="admin-tab active" data-tab="products">Products</div>
+                <div class="admin-tab" data-tab="add-product">Add Product</div>
+            </div>
+            
+            <div class="admin-tab-content active" id="products-tab">
+                <h2>Manage Products</h2>
+                <table class="admin-products-table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-products-tbody">
+                        <!-- Products will be dynamically loaded here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="admin-tab-content" id="add-product-tab">
+                <h2>Add New Product</h2>
+                <form id="add-product-form">
+                    <div class="form-group">
+                        <label for="product-name">Product Name</label>
+                        <input type="text" id="product-name" name="product-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-price">Price (IDR)</label>
+                        <input type="number" id="product-price" name="product-price" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-description">Description</label>
+                        <textarea id="product-description" name="product-description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Image</label>
+                        <div class="image-upload">
+                            <input type="file" id="product-image" name="product-image" accept="image/*">
+                            <label for="product-image" class="image-upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i> Choose Image
+                            </label>
+                        </div>
+                        <div class="image-preview" id="image-preview"></div>
+                    </div>
+                    <button type="submit" class="submit-btn">Add Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div id="edit-product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Edit Product</h2>
+            <form id="edit-product-form">
+                <input type="hidden" id="edit-product-id">
+                <div class="form-group">
+                    <label for="edit-product-name">Product Name</label>
+                    <input type="text" id="edit-product-name" name="edit-product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-product-price">Price (IDR)</label>
+                    <input type="number" id="edit-product-price" name="edit-product-price" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-product-description">Description</label>
+                    <textarea id="edit-product-description" name="edit-product-description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Product Image</label>
+                    <div class="image-upload">
+                        <input type="file" id="edit-product-image" name="edit-product-image" accept="image/*">
+                        <label for="edit-product-image" class="image-upload-label">
+                            <i class="fas fa-cloud-upload-alt"></i> Change Image
+                        </label>
+                    </div>
+                    <div class="image-preview" id="edit-image-preview"></div>
+                </div>
+                <button type="submit" class="submit-btn">Update Product</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script>
+        // WhatsApp number - Ganti dengan nomor WhatsApp Anda dalam format internasional
+        const whatsappNumber = "6287701514672"; // Contoh: 6281234567890 (tanpa +, spasi, atau tanda hubung)
+        
+        // Default admin password
+        const adminPassword = "admin123";
+        
+        // Initialize products from localStorage or use default products
+        let products = JSON.parse(localStorage.getItem('goldenAuriProducts')) || [
+            {
+                id: 1,
+                name: "Premium Jewelry",
+                price: 1250000,
+                description: "High-quality jewelry with premium materials",
+                image: "https://picsum.photos/seed/jewelry/300/300.jpg"
+            },
+            {
+                id: 2,
+                name: "Luxury Watch",
+                price: 3500000,
+                description: "Elegant luxury watch for special occasions",
+                image: "https://picsum.photos/seed/watch/300/300.jpg"
+            },
+            {
+                id: 3,
+                name: "Gold Ring",
+                price: 2100000,
+                description: "Beautiful gold ring with intricate design",
+                image: "https://picsum.photos/seed/ring/300/300.jpg"
+            },
+            {
+                id: 4,
+                name: "Designer Sunglasses",
+                price: 850000,
+                description: "Stylish sunglasses with UV protection",
+                image: "https://picsum.photos/seed/sunglasses/300/300.jpg"
+            }
+        ];
+        
+        // Save products to localStorage
+        function saveProducts() {
+            localStorage.setItem('goldenAuriProducts', JSON.stringify(products));
+        }
+        
+        // Get all modals
+        const catalogModal = document.getElementById('catalog-modal');
+        const orderModal = document.getElementById('order-modal');
+        const contactModal = document.getElementById('contact-modal');
+        const adminLoginModal = document.getElementById('admin-login-modal');
+        const editProductModal = document.getElementById('edit-product-modal');
+        
+        // Get buttons that open modals
+        const catalogBtn = document.getElementById('catalog-btn');
+        const orderBtn = document.getElementById('order-btn');
+        const contactBtn = document.getElementById('contact-btn');
+        const whatsappBtn = document.getElementById('whatsapp-btn');
+        const whatsappFloat = document.getElementById('whatsapp-float');
+        const whatsappOrderBtn = document.getElementById('whatsapp-order-btn');
+        const adminLoginBtn = document.getElementById('admin-login-btn');
+        const adminLogoutBtn = document.getElementById('admin-logout-btn');
+        
+        // Get admin panel and main website
+        const adminPanel = document.getElementById('admin-panel');
+        const mainWebsite = document.getElementById('main-website');
+        
+        // Get close buttons
+        const closeButtons = document.querySelectorAll('.close-modal');
+        
+        // Get admin tabs
+        const adminTabs = document.querySelectorAll('.admin-tab');
+        const adminTabContents = document.querySelectorAll('.admin-tab-content');
+        
+        // Get notification
+        const notification = document.getElementById('notification');
+        
+        // Show notification
+        function showNotification(message, type = 'success') {
+            notification.textContent = message;
+            notification.className = `notification ${type}`;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Open modals when buttons are clicked
+        catalogBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            loadProducts();
+            catalogModal.style.display = 'flex';
+        });
+        
+        orderBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            loadProductOptions();
+            orderModal.style.display = 'flex';
+        });
+        
+        contactBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            contactModal.style.display = 'flex';
+        });
+        
+        adminLoginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            adminLoginModal.style.display = 'flex';
+        });
+        
+        // Admin logout
+        adminLogoutBtn.addEventListener('click', function() {
+            mainWebsite.style.display = 'block';
+            adminPanel.style.display = 'none';
+        });
+        
+        // Admin login form
+        document.getElementById('admin-login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('admin-password').value;
+            
+            if (password === adminPassword) {
+                adminLoginModal.style.display = 'none';
+                mainWebsite.style.display = 'none';
+                adminPanel.style.display = 'block';
+                loadAdminProducts();
+                this.reset();
+            } else {
+                showNotification('Invalid password!', 'error');
+            }
+        });
+        
+        // Admin tabs
+        adminTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and contents
+                adminTabs.forEach(t => t.classList.remove('active'));
+                adminTabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                this.classList.add('active');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+        
+        // WhatsApp functions
+        function openWhatsApp(message) {
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        }
+        
+        // WhatsApp button in main menu
+        whatsappBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const message = "Halo GOLDEN AURI, saya ingin memesan produk. Mohon informasinya.";
+            openWhatsApp(message);
+        });
+        
+        // WhatsApp floating button
+        whatsappFloat.addEventListener('click', function(e) {
+            e.preventDefault();
+            const message = "Halo GOLDEN AURI, saya tertarik dengan produk Anda.";
+            openWhatsApp(message);
+        });
+        
+        // WhatsApp button in order form
+        whatsappOrderBtn.addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const product = document.getElementById('product').value;
+            const quantity = document.getElementById('quantity').value;
+            const address = document.getElementById('address').value;
+            
+            let message = "Halo GOLDEN AURI, saya ingin melakukan pemesanan.%0A%0A";
+            
+            if (name) {
+                message += `Nama: ${name}%0A`;
+            }
+            if (product) {
+                message += `Produk: ${product}%0A`;
+            }
+            if (quantity) {
+                message += `Jumlah: ${quantity}%0A`;
+            }
+            if (address) {
+                message += `Alamat: ${address}%0A`;
+            }
+            
+            message += "%0AMohon informasi selanjutnya. Terima kasih.";
+            
+            openWhatsApp(message);
+        });
+        
+        // Load products to catalog
+        function loadProducts() {
+            const productGrid = document.getElementById('product-grid');
+            productGrid.innerHTML = '';
+            
+            products.forEach(product => {
+                const formattedPrice = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(product.price);
+                
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-price">${formattedPrice}</div>
+                        <div class="product-actions">
+                            <button class="product-btn order-btn" data-product="${product.name}" data-price="${product.price}">Order</button>
+                            <button class="product-btn whatsapp-btn" data-product="${product.name}" data-price="${product.price}">WhatsApp</button>
+                        </div>
+                    </div>
+                `;
+                
+                productGrid.appendChild(productCard);
+            });
+            
+            // Add event listeners to product buttons
+            document.querySelectorAll('.product-btn.order-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const product = this.getAttribute('data-product');
+                    const price = this.getAttribute('data-price');
+                    
+                    // Close catalog modal
+                    catalogModal.style.display = 'none';
+                    
+                    // Open order modal
+                    orderModal.style.display = 'flex';
+                    
+                    // Pre-fill the form with selected product
+                    document.getElementById('product').value = product.toLowerCase().replace(/\s+/g, '');
+                });
+            });
+            
+            document.querySelectorAll('.product-btn.whatsapp-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const product = this.getAttribute('data-product');
+                    const price = this.getAttribute('data-price');
+                    const formattedPrice = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(price);
+                    
+                    const message = `Halo GOLDEN AURI, saya ingin memesan produk berikut:%0A%0AProduk: ${product}%0AHarga: ${formattedPrice}%0A%0AMohon informasi cara pemesanannya. Terima kasih.`;
+                    
+                    openWhatsApp(message);
+                });
+            });
+        }
+        
+        // Load product options to order form
+        function loadProductOptions() {
+            const productSelect = document.getElementById('product');
+            productSelect.innerHTML = '<option value="">Select a product</option>';
+            
+            products.forEach(product => {
+                const option = document.createElement('option');
+                option.value = product.name.toLowerCase().replace(/\s+/g, '');
+                option.textContent = product.name;
+                productSelect.appendChild(option);
+            });
+        }
+        
+        // Load products to admin panel
+        function loadAdminProducts() {
+            const adminProductsTbody = document.getElementById('admin-products-tbody');
+            adminProductsTbody.innerHTML = '';
+            
+            products.forEach(product => {
+                const formattedPrice = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(product.price);
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><img src="${product.image}" alt="${product.name}" class="admin-product-image"></td>
+                    <td>${product.name}</td>
+                    <td>${formattedPrice}</td>
+                    <td>
+                        <button class="admin-action-btn admin-edit-btn" data-id="${product.id}">Edit</button>
+                        <button class="admin-action-btn admin-delete-btn" data-id="${product.id}">Delete</button>
+                    </td>
+                `;
+                
+                adminProductsTbody.appendChild(row);
+            });
+            
+            // Add event listeners to edit buttons
+            document.querySelectorAll('.admin-edit-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    const product = products.find(p => p.id === productId);
+                    
+                    if (product) {
+                        document.getElementById('edit-product-id').value = product.id;
+                        document.getElementById('edit-product-name').value = product.name;
+                        document.getElementById('edit-product-price').value = product.price;
+                        document.getElementById('edit-product-description').value = product.description || '';
+                        
+                        // Show current image
+                        const editImagePreview = document.getElementById('edit-image-preview');
+                        editImagePreview.innerHTML = `<img src="${product.image}" alt="${product.name}">`;
+                        
+                        editProductModal.style.display = 'flex';
+                    }
+                });
+            });
+            
+            // Add event listeners to delete buttons
+            document.querySelectorAll('.admin-delete-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    
+                    if (confirm('Are you sure you want to delete this product?')) {
+                        products = products.filter(p => p.id !== productId);
+                        saveProducts();
+                        loadAdminProducts();
+                        showNotification('Product deleted successfully!');
+                    }
+                });
+            });
+        }
+        
+        // Add product form
+        document.getElementById('add-product-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('product-name').value;
+            const price = parseInt(document.getElementById('product-price').value);
+            const description = document.getElementById('product-description').value;
+            const imageInput = document.getElementById('product-image');
+            
+            // Generate new ID
+            const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
+            
+            // Check if image is uploaded
+            if (imageInput.files && imageInput.files[0]) {
+                const reader = new FileReader();
+                
+                reader.onload = function(event) {
+                    const newProduct = {
+                        id: newId,
+                        name: name,
+                        price: price,
+                        description: description,
+                        image: event.target.result
+                    };
+                    
+                    products.push(newProduct);
+                    saveProducts();
+                    showNotification('Product added successfully!');
+                    
+                    // Reset form
+                    document.getElementById('add-product-form').reset();
+                    document.getElementById('image-preview').innerHTML = '';
+                };
+                
+                reader.readAsDataURL(imageInput.files[0]);
+            } else {
+                // Use placeholder image if no image uploaded
+                const newProduct = {
+                    id: newId,
+                    name: name,
+                    price: price,
+                    description: description,
+                    image: `https://picsum.photos/seed/${name.replace(/\s+/g, '')}/300/300.jpg`
+                };
+                
+                products.push(newProduct);
+                saveProducts();
+                showNotification('Product added successfully!');
+                
+                // Reset form
+                document.getElementById('add-product-form').reset();
+                document.getElementById('image-preview').innerHTML = '';
+            }
+        });
+        
+        // Edit product form
+        document.getElementById('edit-product-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const productId = parseInt(document.getElementById('edit-product-id').value);
+            const name = document.getElementById('edit-product-name').value;
+            const price = parseInt(document.getElementById('edit-product-price').value);
+            const description = document.getElementById('edit-product-description').value;
+            const imageInput = document.getElementById('edit-product-image');
+            
+            const productIndex = products.findIndex(p => p.id === productId);
+            
+            if (productIndex !== -1) {
+                // Update product data
+                products[productIndex].name = name;
+                products[productIndex].price = price;
+                products[productIndex].description = description;
+                
+                // Check if new image is uploaded
+                if (imageInput.files && imageInput.files[0]) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(event) {
+                        products[productIndex].image = event.target.result;
+                        saveProducts();
+                        showNotification('Product updated successfully!');
+                        editProductModal.style.display = 'none';
+                        loadAdminProducts();
+                    };
+                    
+                    reader.readAsDataURL(imageInput.files[0]);
+                } else {
+                    saveProducts();
+                    showNotification('Product updated successfully!');
+                    editProductModal.style.display = 'none';
+                    loadAdminProducts();
+                }
+            }
+        });
+        
+        // Image preview for add product
+        document.getElementById('product-image').addEventListener('change', function() {
+            const imagePreview = document.getElementById('image-preview');
+            
+            if (this.files && this.files[0]) {
+                const reader = new FileReader();
+                
+                reader.onload = function(event) {
+                    imagePreview.innerHTML = `<img src="${event.target.result}" alt="Preview">`;
+                };
+                
+                reader.readAsDataURL(this.files[0]);
+            } else {
+                imagePreview.innerHTML = '';
+            }
+        });
+        
+        // Image preview for edit product
+        document.getElementById('edit-product-image').addEventListener('change', function() {
+            const imagePreview = document.getElementById('edit-image-preview');
+            
+            if (this.files && this.files[0]) {
+                const reader = new FileReader();
+                
+                reader.onload = function(event) {
+                    imagePreview.innerHTML = `<img src="${event.target.result}" alt="Preview">`;
+                };
+                
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+        
+        // Close modals when close button is clicked
+        closeButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                catalogModal.style.display = 'none';
+                orderModal.style.display = 'none';
+                contactModal.style.display = 'none';
+                adminLoginModal.style.display = 'none';
+                editProductModal.style.display = 'none';
+            });
+        });
+        
+        // Close modals when clicking outside of modal content
+        window.addEventListener('click', function(event) {
+            if (event.target === catalogModal) {
+                catalogModal.style.display = 'none';
+            }
+            if (event.target === orderModal) {
+                orderModal.style.display = 'none';
+            }
+            if (event.target === contactModal) {
+                contactModal.style.display = 'none';
+            }
+            if (event.target === adminLoginModal) {
+                adminLoginModal.style.display = 'none';
+            }
+            if (event.target === editProductModal) {
+                editProductModal.style.display = 'none';
+            }
+        });
+        
+        // Handle order form submission
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = new FormData(this);
+            const orderData = {};
+            
+            for (let [key, value] of formData.entries()) {
+                orderData[key] = value;
+            }
+            
+            // Here you would normally send the data to a server
+            console.log('Order submitted:', orderData);
+            
+            // Show success message
+            alert('Terima kasih! Pesanan Anda telah diterima. Kami akan menghubungi Anda segera untuk konfirmasi.');
+            
+            // Reset form and close modal
+            this.reset();
+            orderModal.style.display = 'none';
+        });
+        
+        // Handle contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = new FormData(this);
+            const contactData = {};
+            
+            for (let [key, value] of formData.entries()) {
+                contactData[key] = value;
+            }
+            
+            // Here you would normally send the data to a server
+            console.log('Contact form submitted:', contactData);
+            
+            // Show success message
+            alert('Terima kasih! Pesan Anda telah terkirim. Kami akan merespons segera.');
+            
+            // Reset form and close modal
+            this.reset();
+            contactModal.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
